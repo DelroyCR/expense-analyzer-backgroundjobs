@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ExpenseAnalyzer.BackgroundJobs.Api/ExpenseAnalyzer.BackgroundJobs.Api.csproj" />
+  <Project Path="ExpenseAnalyzer.BackgroundJobs.Application/ExpenseAnalyzer.BackgroundJobs.Application.csproj" />
+  <Project Path="ExpenseAnalyzer.BackgroundJobs.Domain/ExpenseAnalyzer.BackgroundJobs.Domain.csproj" />
+  <Project Path="ExpenseAnalyzer.BackgroundJobs.Infrastructure/ExpenseAnalyzer.BackgroundJobs.Infrastructure.csproj" />
+  <Project Path="ExpenseAnalyzer.BackgroundJobs.UnitTests/ExpenseAnalyzer.BackgroundJobs.UnitTests.csproj" />
+</Solution>
