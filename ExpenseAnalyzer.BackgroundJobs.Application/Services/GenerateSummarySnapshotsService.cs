@@ -25,8 +25,15 @@ public class GenerateSummarySnapshotsService : IGenerateSummarySnapshotsService
 
     public async Task<GenerateDailySummariesResultDto> GenerateDailyAsync(
         GenerateDailySummariesRequestDto request,
+        string triggeredBy = "Manual",
         CancellationToken cancellationToken = default)
     {
+
+        if (request.DateUtc == default)
+        {
+            throw new ArgumentException("DateUtc is required.");
+        }
+
         var execution = new BackgroundJobExecution
         {
             Id = Guid.NewGuid(),
@@ -34,7 +41,7 @@ public class GenerateSummarySnapshotsService : IGenerateSummarySnapshotsService
             Status = "Running",
             StartedAtUtc = DateTime.UtcNow,
             AttemptCount = 1,
-            TriggeredBy = "Manual"
+            TriggeredBy = triggeredBy
         };
 
         await _backgroundJobExecutionRepository.AddAsync(execution, cancellationToken);

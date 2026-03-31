@@ -6,5 +6,6 @@ public interface IGenerateSummarySnapshotsService
 {
     Task<GenerateDailySummariesResultDto> GenerateDailyAsync(
         GenerateDailySummariesRequestDto request,
+        string triggeredBy = "Manual",
         CancellationToken cancellationToken = default);
 }
